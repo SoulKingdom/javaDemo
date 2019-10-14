@@ -1,5 +1,7 @@
 server:
   port: 8090
+  servlet:
+    context-path: /thymeleaf
 spring:
   redis:
     host: 127.0.0.1
@@ -23,5 +25,10 @@ spring:
     port: 5672
     username: guest
     password: guest
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
 mybatis:
   mapper-locations: classpath:mybatis/mapper/user/*Mapper.xml
