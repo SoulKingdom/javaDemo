@@ -1,5 +1,7 @@
 package com.example.junittest.controller;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.crypto.SecureUtil;
 import com.example.junittest.design.mode.adapter.classes.GetCharge;
 import com.example.junittest.design.mode.bridge.ImplementorA;
 import com.example.junittest.design.mode.bridge.RefinedAbstraction;
@@ -35,11 +37,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+
 import javax.annotation.Resource;
-import javax.print.DocFlavor;
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.function.Consumer;
 
 import static org.hamcrest.core.Is.is;
@@ -284,22 +285,15 @@ public class TestControllerTest {
         System.out.println(num);
     }
 
-    /*骰子有6个面，现在用1，2，3，4，5，6分别代表一个骰子的左，右，前，后，上，下的初始位置，用R代表向右滚动一次，用L代表向左滚动一次，可以向前翻转（用F表示向前翻转1次），可以向后翻转（用B表示向右翻转1次），可以逆时针旋转（用A表示逆时针旋转90度），可以顺时针旋转（用C表示逆时针旋转90度），现从初始状态开始，根据输入的动作序列，计算得到最终的状态。
-
-    输入描述：
-
-    初始状态为：123456
-
-    输入只包含LRFBAC的字母序列，最大长度为50，可重复
-
-    输出描述：输出最终状态
-
-    输入例子:RA
-
-    输出例子：436512
-     */
     @Test
     public void test15() {
+        String dateStr = "2012-12-12 12:12:12";
+        Date date = DateUtil.parse(dateStr);
+        System.out.println(date);
+        //MD5加密
+        String str = "123456";
+        String md5Str = SecureUtil.md5(str);
+        System.out.println(md5Str);
 
     }
 

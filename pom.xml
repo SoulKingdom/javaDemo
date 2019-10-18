@@ -53,6 +53,12 @@
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
         <!--定时器Quartz  end-->
+        <!--Spring boot jpa start-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!--Spring boot jpa end-->
         <!--SpringFox Start-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -65,7 +71,6 @@
             <version>2.6.1</version>
         </dependency>
         <!--SpringFox swagger-->
-
         <!--mysql需要jar包 start-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -118,6 +123,23 @@
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
         <!-- tomcat的支持. end-->
+        <!--hutool 工具类的 start-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+        <!--hutool 工具类的 end-->
+        <!--Spring security 安全框架 start-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+        <!--Spring security 安全框架 end-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>

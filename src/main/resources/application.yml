@@ -1,7 +1,5 @@
 server:
   port: 8090
-  servlet:
-    context-path: /thymeleaf
 spring:
   redis:
     host: 127.0.0.1
@@ -32,3 +30,5 @@ spring:
       content-type: text/html
 mybatis:
   mapper-locations: classpath:mybatis/mapper/user/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
