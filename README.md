@@ -37,5 +37,6 @@ This content is about the Java related operation demo.(关于java技术的demo)
   - 配置UserDetailsService
   - 配置WebSecurityConfig
 + 程序运行
-
+##mongoDB整合使用(crud)
++ 测试16使用mongo
 

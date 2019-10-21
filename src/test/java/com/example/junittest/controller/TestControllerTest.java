@@ -31,6 +31,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -49,6 +53,9 @@ import static org.hamcrest.core.Is.is;
 @RunWith(SpringRunner.class)
 @Slf4j
 public class TestControllerTest {
+
+    @Resource
+    private MongoTemplate mongoTemplate;
     @Resource
     private TestService testService;
     @Resource
@@ -294,7 +301,17 @@ public class TestControllerTest {
         String str = "123456";
         String md5Str = SecureUtil.md5(str);
         System.out.println(md5Str);
-
+    }
+    @Test
+    public void test16(){
+        //查询mongo数据
+        Query query = new Query();
+        query.with(new Sort(Sort.Direction.DESC, "time_stamp"));
+        //查询条件
+        Criteria criteria = Criteria.where("time_stamp").gte("1");
+        query.addCriteria(criteria);
+        log.info(query.toString());
+        List<Map> pointMap = mongoTemplate.find(query, Map.class, "SE13_J01_yaoce");
     }
 
 }
