@@ -1,5 +1,7 @@
 # javaDemo项目demo
 This content is about the Java related operation demo.(关于java技术的demo)
+## swagger访问路径
+[http://localhost:8090/swagger-ui.html]
 ##增加thymeleaf的demo
 为项目增加Thymeleaf模板（使用Thymeleaf跳转界面）
 通过测试接口http://localhost:8090/thymeleaf/thymeleaf/hello 显示
@@ -39,4 +41,5 @@ This content is about the Java related operation demo.(关于java技术的demo)
 + 程序运行
 ##mongoDB整合使用(crud)
 + 测试16使用mongo
-
+##mysql存储过程使用
++ 增加基本的查询用户的存储过程
