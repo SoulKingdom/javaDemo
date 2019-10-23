@@ -21,8 +21,8 @@ public class LoginController {
     @RequestMapping("/")
     public String showHome() {
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println("有一丝小累人");
         logger.info("当前登陆用户：" + name);
-
         return "home";
     }
 
