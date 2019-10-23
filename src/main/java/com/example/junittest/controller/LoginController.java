@@ -22,7 +22,6 @@ public class LoginController {
     public String showHome() {
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         logger.info("当前登陆用户：" + name);
-
         return "home";
     }
 
