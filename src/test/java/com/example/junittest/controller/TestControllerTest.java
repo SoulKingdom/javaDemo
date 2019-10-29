@@ -23,7 +23,9 @@ import com.example.junittest.entity.Base;
 import com.example.junittest.entity.Derived;
 import com.example.junittest.entity.User;
 import com.example.junittest.enume.ColorEnum;
+import com.example.junittest.service.LambService;
 import com.example.junittest.service.TestService;
+import com.example.junittest.service.impl.LambServiceImpl;
 import com.example.junittest.util.UnitConverFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -314,4 +316,19 @@ public class TestControllerTest {
         List<Map> pointMap = mongoTemplate.find(query, Map.class, "SE13_J01_yaoce");
     }
 
+    public static String method(String st1,String str2,LambService lambService){
+        return  lambService.testLamb(st1,str2);
+    }
+
+    @Test
+    public  void test17(){
+        LambService lambService = (str1,str2)->str1+str2;
+        System.out.println(lambService.testLamb("张三","李四"));
+        String method1 = method("hello", "world", ((str1, str2) -> str1+"1"+str2));
+        System.out.println(method1);
+        String method2 = method("10","20",lambService);
+        System.out.println(method2);
+        String method3 = lambService.testLamb("weather","sunny");
+        System.out.println(method3);
+    }
 }
