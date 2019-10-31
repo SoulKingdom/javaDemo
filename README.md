@@ -1,5 +1,16 @@
 # javaDemo项目demo
 This content is about the Java related operation demo.(关于java技术的demo)
+## Java简单设计模式demo 所属包（com.example.junnittest.design.mode）
++ adapter适配器模式
++ bridge 桥接模式
++ builder 建造者模式
++ factory 工厂模式
++ prototype 原型模式
++ singleton 单例模式 
+  - 饿汉式
+  - 懒汉式 
+## Redis整合
++ 写成简单的工具类，方便调用自动注入RedisUtill整合
 ## swagger访问路径
 [http://localhost:8090/swagger-ui.html]
 + 生成swagger静态文档
