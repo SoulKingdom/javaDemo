@@ -3,6 +3,7 @@ package com.example.junittest.controller;
 import com.example.junittest.annotation.LogOperat;
 import com.example.junittest.enumer.LogType;
 import com.example.junittest.enumer.LoginOperationType;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,8 +27,9 @@ public class AopController {
       * @author HaoXin.Liu
       * @date 2019/10/29 14:00
       **/
+    @ApiOperation(value = "aop面向注解测试",notes = "aop面向注解测试描述",produces = "application/json")
     @LogOperat(detail = "登录日志",logType = LogType.LOGIN,level = 1,loginOperationType = LoginOperationType.LOGIN)
-    @RequestMapping(value = "appTestLogin",method = RequestMethod.POST)
+    @RequestMapping(value = "aopTestLogin",method = RequestMethod.POST)
     public String aopTestLogin(){
         return "这是用来测试aop是否通过注解调用";
     }
@@ -38,7 +40,7 @@ public class AopController {
       * @author HaoXin.Liu
       * @date 2019/10/29 14:01
       **/
-    @RequestMapping(value = "appTestLogin",method = RequestMethod.POST)
+    @RequestMapping(value = "aopTestLoginByTestAop",method = RequestMethod.POST)
     public String aopTestLoginByTestAop(){
         return "This Test is aop method test！";
     }

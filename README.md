@@ -2,6 +2,7 @@
 This content is about the Java related operation demo.(关于java技术的demo)
 ## swagger访问路径
 [http://localhost:8090/swagger-ui.html]
++ 生成swagger静态文档
 ##增加thymeleaf的demo
 为项目增加Thymeleaf模板（使用Thymeleaf跳转界面）
 通过测试接口http://localhost:8090/thymeleaf/thymeleaf/hello 显示
@@ -57,7 +58,7 @@ This content is about the Java related operation demo.(关于java技术的demo)
  			<scope>true</scope>
  		</dependency>
  		<!-- spring-boot-devtools热启动依赖包 end -->`
-## AOP动态代理
+## AOP动态代理（面向注解和面向方法）
    1. 添加AOP pom文件
    2. 创建Annotation 注解
    3. 创建状态码

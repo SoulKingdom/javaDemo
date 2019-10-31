@@ -35,3 +35,6 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/user/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
+#----------------swagger配置-----------------------
+swagger:
+  enable: false
