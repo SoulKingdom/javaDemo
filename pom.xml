@@ -70,7 +70,7 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.6.1</version>
         </dependency>
-            <!--springfox-staticdocs 生成静态文档-->
+        <!--springfox-staticdocs 生成静态文档-->
         <dependency>
             <groupId>io.github.swagger2markup</groupId>
             <artifactId>swagger2markup</artifactId>
@@ -102,11 +102,11 @@
             <version>0.2.0</version>
             <scope>test</scope>
         </dependency>-->
-      <!--  <dependency>
-            <groupId>io.github.swagger2markup</groupId>
-            <artifactId>swagger2markup-spring-restdocs-ext</artifactId>
-            <scope>test</scope>
-        </dependency>-->
+        <!--  <dependency>
+              <groupId>io.github.swagger2markup</groupId>
+              <artifactId>swagger2markup-spring-restdocs-ext</artifactId>
+              <scope>test</scope>
+          </dependency>-->
         <!--SpringFox swagger-->
         <!--mysql需要jar包 start-->
         <dependency>
@@ -172,10 +172,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-       <!-- <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.springframework.security.oauth</groupId>
+             <artifactId>spring-security-oauth2</artifactId>
+         </dependency>-->
         <!--Spring security 安全框架 end-->
         <!--mongodb整合 start-->
         <dependency>
@@ -189,6 +189,23 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!-- aop操作依赖包 End -->
+        <!--极光推送 start-->
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jpush-client</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <!--极光推送 end-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId> org.springframework.boot </groupId>
+            <artifactId> spring-boot-configuration-processor </artifactId>
+            <optional> true </optional>
+        </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>

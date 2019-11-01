@@ -51,6 +51,7 @@ This content is about the Java related operation demo.(关于java技术的demo)
   - 配置UserDetailsService
   - 配置WebSecurityConfig
 + 程序运行
+  + 用户名：admin   密码：123
 ## mongoDB整合使用(crud)
 + 测试16使用mongo
 ## mysql存储过程使用
@@ -74,3 +75,11 @@ This content is about the Java related operation demo.(关于java技术的demo)
    2. 创建Annotation 注解
    3. 创建状态码
    4. 创建AOP类
+### 极光推送使用
+ + 增加pom文件 
+ + 写appKey和masterSecret配置文件
+ + JpushConfig配置文件获取极光键和密钥信息
+ + JpushInstanceConfig 默认获取极光client
+ + 撰写JpushUtil工具类，实现调用极光推送功能
+ + JPushClientPC类 实现消息的调用
+ 

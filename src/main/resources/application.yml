@@ -38,3 +38,7 @@ mybatis:
 #----------------swagger配置-----------------------
 swagger:
   enable: false
+#--------------------极光推送配置------------------------------
+jpush:
+  appKey: 857d8aa9313a2ce76c29d27f
+  masterSecret: b551792c19cf170ad075965e
