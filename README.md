@@ -82,4 +82,9 @@ This content is about the Java related operation demo.(关于java技术的demo)
  + JpushInstanceConfig 默认获取极光client
  + 撰写JpushUtil工具类，实现调用极光推送功能
  + JPushClientPC类 实现消息的调用
- 
+### Excel导入导出（通过POI和反射实现通用的）代码所在位置（com.example.junnittest.excel）
+ + 写一个通过更改注解实现Excel的导入导出,方便代码实现通用(需要注意)
+    - 写注解 ChineseName（方法注解）,ColumnID（方法注解）,ExcelFileName（类注解） 知道Excel中的中文名、主键、Excel中sheet的名称
+    - 通过定义的User(举例)，然后定义上面的注解，通过调用http://127.0.0.1:8090/excel/creatExcelSheets创建模板（支持多个sheet）
+    - 然后填写下载的模板信息，通过调用长传接口http://127.0.0.1:8090/excel/readExcel，读取模板中信息，存入map中
+    - 准备更新的内容：增加错误信息的Excel导出，把没有导入成功的信息进行导出，并说明原因

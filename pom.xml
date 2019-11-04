@@ -130,8 +130,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <!--单元测试引用jar包 end-->
         </dependency>
+        <!--单元测试引用jar包 end-->
         <!--可以引入日志 @Slf4j注解  start-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -168,10 +168,10 @@
         </dependency>
         <!--hutool 工具类的 end-->
         <!--Spring security 安全框架 start-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- <dependency>
              <groupId>org.springframework.security.oauth</groupId>
              <artifactId>spring-security-oauth2</artifactId>
@@ -196,6 +196,13 @@
             <version>3.3.7</version>
         </dependency>
         <!--极光推送 end-->
+        <!--POI 用于excel导入导出 start-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <!--POI 用于excel导入导出 end-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

@@ -1,23 +1,6 @@
 package com.example.junittest.service.impl;
 
-import com.example.junittest.entity.SysRole;
-import com.example.junittest.entity.SysUser;
-import com.example.junittest.entity.SysUserRole;
-import com.example.junittest.service.SysRoleService;
-import com.example.junittest.service.SysUserRoleService;
-import com.example.junittest.service.SysUserService;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  *  @dept 上海软件研发中心
@@ -26,8 +9,8 @@ import java.util.List;
  *  @date 2019/10/18 15:20
  **/
 @Service("userDetailsService")
-public class CustomUserDetailsService implements UserDetailsService {
-    @Resource
+public class CustomUserDetailsService /*implements UserDetailsService */{
+ /*   @Resource
     private SysUserService userService;
 
     @Resource
@@ -56,5 +39,5 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         // 返回UserDetails实现类
         return new User(user.getName(), user.getPassword(), authorities);
-    }
+    }*/
 }
