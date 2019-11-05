@@ -26,6 +26,7 @@ import com.example.junittest.enume.ColorEnum;
 import com.example.junittest.service.LambService;
 import com.example.junittest.service.TestService;
 import com.example.junittest.service.impl.LambServiceImpl;
+import com.example.junittest.util.DateUtils;
 import com.example.junittest.util.UnitConverFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -46,6 +47,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -330,5 +333,19 @@ public class TestControllerTest {
         System.out.println(method2);
         String method3 = lambService.testLamb("weather","sunny");
         System.out.println(method3);
+    }
+    @Test
+    public  void test18(){
+        String str = "2019-09";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+        SimpleDateFormat sdfTo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            String startTime = sdfTo.format(DateUtils.getStartTimeCurrentDay(sdf.parse(str)));
+            String endTime = sdfTo.format(DateUtils.getCurrentMonthEndDay(sdf.parse(str)));
+            System.out.println(startTime);
+            System.out.println(endTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

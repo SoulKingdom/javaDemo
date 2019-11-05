@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry    location="mysql-connector-java-5.1.19-bin.jar"/>
+    <context id="DB2Tables"    targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--���ݿ����ӵ�ַ�˺�����-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://180.153.142.133:33061/des_romm_db" userId="des-romm" password="Se123se456!">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--����Model����λ��-->
+        <javaModelGenerator targetPackage="com.neusoft.vendor.file.pojo" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--����ӳ���ļ����λ��-->
+        <sqlMapGenerator targetPackage="com" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--����Dao����λ��-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.neusoft.vendor.file.dao" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--���ɶ�Ӧ������-->
+        <table tableName="t_fault_log" domainObjectName="FaultLogDO" enableCountByExample="false " enableUpdateByExample="false" enableDeleteByExample="false " enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    </context>
+</generatorConfiguration>
