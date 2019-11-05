@@ -10,26 +10,26 @@
             <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-        <!--���ݿ����ӵ�ַ�˺�����-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://180.153.142.133:33061/des_romm_db" userId="des-romm" password="Se123se456!">
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/owner" userId="root" password="root">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <!--����Model����λ��-->
-        <javaModelGenerator targetPackage="com.neusoft.vendor.file.pojo" targetProject="src">
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.vendor.file.pojo" targetProject="generalinfo">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <!--����ӳ���ļ����λ��-->
-        <sqlMapGenerator targetPackage="com" targetProject="src">
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="com" targetProject="generalinfo">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <!--����Dao����λ��-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.neusoft.vendor.file.dao" targetProject="src">
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.vendor.file.dao" targetProject="generalinfo">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-        <!--���ɶ�Ӧ������-->
-        <table tableName="t_fault_log" domainObjectName="FaultLogDO" enableCountByExample="false " enableUpdateByExample="false" enableDeleteByExample="false " enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!--生成对应表及类名-->
+        <table tableName="sys_user_role" domainObjectName="UerRole" enableCountByExample="false " enableUpdateByExample="false" enableDeleteByExample="false " enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>

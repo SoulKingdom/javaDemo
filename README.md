@@ -88,3 +88,15 @@ This content is about the Java related operation demo.(关于java技术的demo)
     - 通过定义的User(举例)，然后定义上面的注解，通过调用http://127.0.0.1:8090/excel/creatExcelSheets创建模板（支持多个sheet）
     - 然后填写下载的模板信息，通过调用长传接口http://127.0.0.1:8090/excel/readExcel，读取模板中信息，存入map中
     - 准备更新的内容：增加错误信息的Excel导出，把没有导入成功的信息进行导出，并说明原因
+### Mybatis自动生成工具generator使用
++ 下载工具包，里面存在主要的两个jar
+  - mybatis-generator-core-1.3.2.jar 生成代码的工具包
+  - mysql-connector-java-5.1.19-bin.jar mysql连接工具包
++ 修改generatorConfig.xml配置文件，需要配置的基本信息如下：详情请看包[resources.general.generatorConfig.xml]
+  - 数据库驱动
+  - 数据库链接地址账号密码
+  - 生成Model类存放位置
+  - 生成映射文件存放位置
+  - 生成Dao类存放位置
+  - 生成对应表及类名
++ 运行createMybatisCode.bat文件生成代码  
