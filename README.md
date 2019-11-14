@@ -100,3 +100,6 @@ This content is about the Java related operation demo.(关于java技术的demo)
   - 生成Dao类存放位置
   - 生成对应表及类名
 + 运行createMybatisCode.bat文件生成代码  
+### 根据链接生成二维码 包[com.example.junnittest.qrutil.QrUtils]
+  + 增加pom文件
+  + 生成图片二维码
