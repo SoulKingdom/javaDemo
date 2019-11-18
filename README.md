@@ -103,3 +103,6 @@ This content is about the Java related operation demo.(关于java技术的demo)
 ### 根据链接生成二维码 包[com.example.junnittest.qrutil.QrUtils]
   + 增加pom文件
   + 生成图片二维码
+### 加密算法
+  + BASE64 严格地说，属于编码格式，而非加密算法（属于可逆）
+  + Hutool ASC和DES

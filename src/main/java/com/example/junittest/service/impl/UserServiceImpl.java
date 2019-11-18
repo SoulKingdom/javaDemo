@@ -5,6 +5,7 @@ import com.example.junittest.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Optional;
 
 /**
  *  @dept 上海软件研发中心
@@ -16,10 +17,15 @@ import javax.annotation.Resource;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    UserDao userDao;
+    private Optional<UserDao> userDao;
 
     @Override
     public Integer countUser() {
-        return userDao.countUser();
+        //统计用户数量
+        if (userDao.isPresent()) {
+            //查询用户数量
+            return userDao.get().countUser();
+        }
+        return 0;
     }
 }
