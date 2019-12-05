@@ -8,4 +8,8 @@ package com.example.junittest.service;
  **/
 public interface TestService {
     String testMethod();
+
+    String mongoTest();
+
+    boolean insertMongo();
 }

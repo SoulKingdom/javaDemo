@@ -30,6 +30,7 @@ spring:
       content-type: text/html
   data:
     mongodb:
+      database: des_romm_db
       uri: mongodb://localhost:27017/des_romn_db
 mybatis:
   mapper-locations: classpath:mybatis/mapper/user/*Mapper.xml

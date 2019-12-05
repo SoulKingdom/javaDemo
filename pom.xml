@@ -120,11 +120,6 @@
             <scope>runtime</scope>
         </dependency>
         <!--mysql需要jar包 end-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!--单元测试引用jar包 start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -210,6 +205,14 @@
             <version>3.3.0</version>
         </dependency>
         <!--生成二维码图片jar end-->
+        <!--发送邮箱 start-->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--发送邮箱 end-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

@@ -40,6 +40,17 @@ This content is about the Java related operation demo.(关于java技术的demo)
 * hutool-json JSON实现
 * hutool-captcha 图片验证码实现
 * hutool-poi 针对POI中Excel的封装  
+#### 使用hutool实现工作日报发送
+src/main/java
+    - cn/hutool/example/dailyWork/
+       - DailyWorkGenerator.java ---- 日报生成器，用于生成Word文档
+       - MailSendTask.java       ---- 邮件发送任务，用于发送邮件
+       - DailyWorkMain.java      ---- 定时任务主程序，用于启动定时任务
+       
+src/main/resources
+   - config/
+      - cron.setting            ---- 定时任务配置文件
+        - mail.setting          ---- 邮箱配置文件
 ## 整合SpringSecurity
 项目整合连接[https://blog.csdn.net/yuanlaijike/article/details/80249235]
 + pom架包
@@ -54,6 +65,7 @@ This content is about the Java related operation demo.(关于java技术的demo)
   + 用户名：admin   密码：123
 ## mongoDB整合使用(crud)
 + 测试16使用mongo
++ 通过mongoTemplate操作
 ## mysql存储过程使用
 + 增加基本的查询用户的存储过程
 ## 整合JWT实现Token认证（并没有做，担心可能会有Spring security冲突）
