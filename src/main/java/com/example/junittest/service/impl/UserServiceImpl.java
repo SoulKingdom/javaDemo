@@ -1,6 +1,8 @@
 package com.example.junittest.service.impl;
 
 import com.example.junittest.dao.UserDao;
+import com.example.junittest.entity.RoleInfo;
+import com.example.junittest.entity.UserCond;
 import com.example.junittest.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -28,4 +30,12 @@ public class UserServiceImpl implements UserService {
         }
         return 0;
     }
+
+    @Override
+    public RoleInfo getUser(UserCond userCond) {
+        //根据角色Id获取用户信息
+        RoleInfo roleInfo = userDao.get().getUser(userCond);
+        return roleInfo;
+    }
+
 }

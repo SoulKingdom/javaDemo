@@ -26,7 +26,7 @@ public class QrUtils {
 
     public static void main(String[] args) {
         //生成链接
-        String url = "http://www.baidu.com";
+        String url = "http://ids.des-platform.com/download/des-platform-app.ipa";
         log.info("生成链接------->" + url);
         //配置生成路径
         String path = FileSystemView.getFileSystemView().getHomeDirectory() + File.separator + "testQrcode";

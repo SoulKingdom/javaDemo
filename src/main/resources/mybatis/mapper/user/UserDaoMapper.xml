@@ -8,4 +8,23 @@
             t_user
     </select>
 
+    <select id="getUser" resultType="com.example.junittest.entity.RoleInfo">
+    SELECT
+        sur.user_id AS 'userId',
+        su.`name`AS 'userName',
+        sur.role_id AS 'roleId',
+        sr.`name` AS 'roleName'
+    FROM
+        (
+            SELECT
+                sur.user_id,sur.role_id
+            FROM
+                `sys_user_role` sur
+            WHERE
+                sur.role_id = #{roleId}
+        ) sur
+    INNER JOIN sys_role sr ON sr.id = sur.role_id
+    INNER JOIN sys_user su ON su.id = sur.user_id
+    </select>
+
 </mapper>

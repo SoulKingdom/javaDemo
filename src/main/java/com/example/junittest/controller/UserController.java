@@ -1,6 +1,8 @@
 package com.example.junittest.controller;
 
+import com.example.junittest.entity.RoleInfo;
 import com.example.junittest.entity.User;
+import com.example.junittest.entity.UserCond;
 import com.example.junittest.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,5 +27,11 @@ public class UserController {
     public String countUser(@RequestBody User user) {
         Integer count = userService.countUser();
         return String.valueOf(count);
+    }
+
+    @PostMapping("getUser")
+    public RoleInfo getUser(@ModelAttribute("userCond") UserCond userCond) {
+        RoleInfo roleInfo = userService.getUser(userCond);
+        return roleInfo;
     }
 }
