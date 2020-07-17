@@ -2,6 +2,9 @@ package com.example.junittest.dao;
 
 import com.example.junittest.entity.RoleInfo;
 import com.example.junittest.entity.UserCond;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Map;
 
 public interface UserDao {
     /**
@@ -24,4 +27,11 @@ public interface UserDao {
      * @date 2019/12/9 15:39
      **/
     RoleInfo getUser(UserCond userCond);
+
+    Map<String,String> getUserMap(String userId);
+    /**
+     * 修改用户名
+     * @return
+     */
+    int update1(@Param("id") String id);
 }

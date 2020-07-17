@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URL;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
 
 /**
  * @author MR.ZHANG

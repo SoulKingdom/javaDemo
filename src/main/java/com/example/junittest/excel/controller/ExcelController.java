@@ -74,4 +74,22 @@ public class ExcelController {
         log.info(mapTo.toString());
         return mapTo;
     }
+
+    /**
+     * 响应信息获取
+     *
+     * @dept 上海软件研发中心
+     * @return 获取
+     * @author HaoXin.Liu
+     * @date 2019/4/4 10:43
+     **/
+    @PostMapping("exportExcel")
+    public String exportExcel(HttpServletResponse response) {
+        List<Device> list = new ArrayList<>(2);
+        list.add(new Device("1", "一号设备", "www.devieone.com"));
+        list.add(new Device("1", "一号设备", "www.devieone.com"));
+        String mapTo = ExcelUtil.createExcelTo(response, "", list);
+        log.info("Excel数据导出成功=====>>文件名：[{}]｝", mapTo);
+        return mapTo;
+    }
 }

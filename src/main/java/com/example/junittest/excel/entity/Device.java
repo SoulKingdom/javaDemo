@@ -21,4 +21,14 @@ public class Device {
     private String deivecName;
     @ChineseName("设备图片")
     private String devicePic;
+
+    public Device() {
+      super();
+    }
+
+    public Device(String deviceId, String deivecName, String devicePic) {
+        this.deviceId = deviceId;
+        this.deivecName = deivecName;
+        this.devicePic = devicePic;
+    }
 }

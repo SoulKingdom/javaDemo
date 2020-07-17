@@ -43,3 +43,7 @@ swagger:
 jpush:
   appKey: 857d8aa9313a2ce76c29d27f
   masterSecret: b551792c19cf170ad075965e
+#
+#secure:
+#  ignored:
+#    urls: "",""

@@ -1,9 +1,7 @@
 package com.example.junittest.config;
 
-import com.example.junittest.timer.MyJob2;
 import org.quartz.JobDataMap;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.*;
 
 import java.util.Date;
@@ -23,15 +21,17 @@ public class QuartzConfig {
         bean.setTargetMethod("sayHello");
         return bean;
     }
+
     @Bean
     JobDetailFactoryBean jobDetailFactoryBean() {
         JobDetailFactoryBean bean = new JobDetailFactoryBean();
-        bean.setJobClass(MyJob2.class);
+        //bean.setJobClass(MyJob2.class);
         JobDataMap map = new JobDataMap();
         map.put("num", 10);
         bean.setJobDataMap(map);
         return bean;
     }
+
     @Bean
     SimpleTriggerFactoryBean simpleTriggerFactoryBean() {
         SimpleTriggerFactoryBean bean = new SimpleTriggerFactoryBean();
@@ -42,6 +42,7 @@ public class QuartzConfig {
         bean.setRepeatInterval(3000);
         return bean;
     }
+
     @Bean
     CronTriggerFactoryBean cronTrigger() {
         CronTriggerFactoryBean bean = new CronTriggerFactoryBean();
@@ -49,6 +50,7 @@ public class QuartzConfig {
         bean.setJobDetail(jobDetailFactoryBean().getObject());
         return bean;
     }
+
     @Bean
     SchedulerFactoryBean schedulerFactoryBean() {
         SchedulerFactoryBean bean = new SchedulerFactoryBean();

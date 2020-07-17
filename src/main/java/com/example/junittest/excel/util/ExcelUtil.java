@@ -6,23 +6,25 @@ import com.example.junittest.excel.annotation.ColumnID;
 import com.example.junittest.excel.annotation.ExcelFileName;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
  * @dept 上海软件研发中心
- * @function TODO Excel 导入 导出工具类
+ * @function Excel 导入 导出工具类
  * @author HaoXin.Liu
  * @date 2019/4/3 17:19
  **/
 public class ExcelUtil {
+    private static final Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
+
     public static final String EXCEL_EXTENDS_NAME = ".xls";
 
     public static String fileName = "templet";
@@ -54,15 +56,16 @@ public class ExcelUtil {
         }
         return tittle;
     }
+
     /**
-      * 获取反射类的文件类注解名称
-      *
-      * @dept 上海软件研发中心
-      * @param cls 反射类
-      * @return
-      * @author HaoXin.Liu
-      * @date 2019/11/4 15:45
-      **/
+     * 获取反射类的文件类注解名称
+     *
+     * @dept 上海软件研发中心
+     * @param cls 反射类
+     * @return
+     * @author HaoXin.Liu
+     * @date 2019/11/4 15:45
+     **/
     private static String getExcelFileNameByAnno(Class<?> cls) {
         ExcelFileName fileNameAnn = cls.getAnnotation(ExcelFileName.class);
         //4. 判断 检查 @ExcelFileName
@@ -85,7 +88,6 @@ public class ExcelUtil {
     public static <T> String createExcelSheetsTemplet(HttpServletResponse response, List<Class> clses) {
         //1.1创建 excel 工作薄
         Workbook wb = new HSSFWorkbook();
-        int num = 0;
         for (Class<?> cls : clses) {
             //注解名称
             String tittle = getExcelFileNameByAnno(cls);
@@ -126,14 +128,17 @@ public class ExcelUtil {
 
     /**
      * @dept 上海软件研发中心
-     * @function TODO web Excel模板下载
+     * @function web Excel模板下载
      * @param dataList 数据集 （面向对象思想 DAO 数据访问对象）
      * @param tittle   Excel标题名称
-     * @return TODO
+     * @return String 创建Excel名称
      * @author HaoXin.Liu
      * @date 2019/4/3 18:08
      **/
     public static String createExcelTo(HttpServletResponse response, String tittle, Collection<?> dataList) {
+        //判断导出数据与65535的倍数关系，大于65535excel导出存在问题
+        int listSize = dataList.size();
+        //int excelNum = listSize % Max_ == 0 ? listSize / MAX_NUM : listSize / MAX_NUM + 1;
         //1.1创建 excel 工作薄
         Workbook wb = new HSSFWorkbook();
         //2.自定义的方法 获得新的 文件名
@@ -184,9 +189,10 @@ public class ExcelUtil {
 
     /**
      * @dept 上海软件研发中心
-     * @function TODO 读取文件信息存入map中
-     * @param   file 上传的文件信息
-     * @return TODO
+     * @function 读取文件信息存入map中
+     * @param  file 上传的文件信息
+     * @param  entityCls 实体类型
+     * @return Map 读取Excel表格
      * @author HaoXin.Liu
      * @date 2019/4/4 11:23
      **/
@@ -202,7 +208,7 @@ public class ExcelUtil {
             dataMap = mappingExcel2Bean(sheet, entityCls);
             wb.close();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            logger.info("Excel读取文件信息存入失败");
             e.printStackTrace();
         }
 

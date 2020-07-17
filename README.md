@@ -1,5 +1,11 @@
 # javaDemo项目demo
 This content is about the Java related operation demo.(关于java技术的demo)
+##SQL优化方面的处理
+  1. 减小关联查询的数据量
+  2. 关联时尽量采用inner join
+  3. 通过索引加快速度
+     + 单列索引 
+     + 组合索引
 ## Java简单设计模式demo 所属包（com.example.junnittest.design.mode）
 + adapter适配器模式
 + bridge 桥接模式
@@ -68,7 +74,8 @@ src/main/resources
 + 通过mongoTemplate操作
 ## mysql存储过程使用
 + 增加基本的查询用户的存储过程
-## 整合JWT实现Token认证（并没有做，担心可能会有Spring security冲突）
+## 整合JWT实现Token认证（担心可能会有Spring security冲突）
++ 增加JWT的pom文件
 ## JAVA8新特性使用
 + lamb表达式
   + 方法一：主要作用是实现单独一个接口的里面单独功能的实现，然后返回这个接口对象。

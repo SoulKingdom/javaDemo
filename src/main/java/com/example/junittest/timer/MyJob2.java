@@ -10,6 +10,7 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
  *  @author HaoXin.Liu
  *  @date 2019/9/16 15:10
  **/
+/*
 @Slf4j
 public class MyJob2 extends QuartzJobBean {
     private  int num ;
@@ -18,4 +19,4 @@ public class MyJob2 extends QuartzJobBean {
         num++;
         log.info("定时器正在执行："+num);
     }
-}
+}*/

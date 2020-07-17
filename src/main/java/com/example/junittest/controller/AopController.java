@@ -44,4 +44,12 @@ public class AopController {
     public String aopTestLoginByTestAop(){
         return "This Test is aop method test！";
     }
+
+
+    public static void main(String[] args) {
+        Integer i = 1;
+        int b = 1;
+        Integer in = 8<6?i:b;
+        System.out.println(in);
+    }
 }

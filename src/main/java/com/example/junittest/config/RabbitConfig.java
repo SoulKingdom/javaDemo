@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *  @author HaoXin.Liu
  *  @date 2019/10/11 11:25
  **/
-@Configuration
+/*@Configuration*/
 public class RabbitConfig {
 
     @Bean
